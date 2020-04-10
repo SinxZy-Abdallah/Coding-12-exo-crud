@@ -24,7 +24,7 @@
         <li class="menu-active"></li>
           <li><a href="/">Home</a></li>
           <li><a href="/aboutedit">About Us</a></li>
-          <li><a href="#services">Services</a></li>
+          <li><a href="/servicedit">Services</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#team">Team</a></li>
@@ -36,7 +36,7 @@
 </nav>
 </header>
 <div>
-<h1 class="text-center mt-5">Page Administration</h1>
+{{-- <h1 class="text-center mt-5">Page Administration</h1> --}}
 </div>
 
 

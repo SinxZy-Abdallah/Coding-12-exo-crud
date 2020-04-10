@@ -14,8 +14,7 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        // $abouts = about::all();
-        // return view('/about', compact('abouts'));
+        //
     }
 
     /**
@@ -25,7 +24,7 @@ class ServicesController extends Controller
      */
     public function create()
     {
-        //
+        return view('create.service');
     }
 
     /**
@@ -34,10 +33,15 @@ class ServicesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
-    }
+        $services = new services();
+        $services -> titre = request('titre');
+        $services -> description = request('description');
+        $services -> logo = request('logo');
+        $services -> save();
+        return redirect()->route('service');
+        }
 
     /**
      * Display the specified resource.
@@ -47,7 +51,8 @@ class ServicesController extends Controller
      */
     public function show(services $services)
     {
-        //
+        $services = services::all();
+        return view('backOffice.servicedit', compact('services'));
     }
 
     /**
@@ -58,8 +63,9 @@ class ServicesController extends Controller
      */
     public function edit(services $services)
     {
-        //
-    }
+        $services = services::find($id);
+        return view('edit.services', compact('services'));
+        }
 
     /**
      * Update the specified resource in storage.
@@ -68,9 +74,14 @@ class ServicesController extends Controller
      * @param  \App\services  $services
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, services $services)
+    public function update($id)
     {
-        //
+        $services = services::find($id);
+        $services -> titre=request('titre');
+        $services -> description = request('description');
+        $services -> logo =request('logo');
+        $services ->save();
+        return redirect()->route('service');
     }
 
     /**
@@ -79,8 +90,9 @@ class ServicesController extends Controller
      * @param  \App\services  $services
      * @return \Illuminate\Http\Response
      */
-    public function destroy(services $services)
+    public function destroy($id)
     {
-        //
+        services::find($id)->delete();
+        return redirect()->back();
     }
 }
