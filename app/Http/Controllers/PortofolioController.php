@@ -37,7 +37,7 @@ class PortofolioController extends Controller
     {
         $portofolios = new portofolio();
         $portofolios -> titre = request('titre');
-        $portofolios -> description = request('description');
+        // $portofolios -> description = request('description');
         $portofolios -> img_porto = request('img_porto');
         $portofolios -> description2 = request('description2');
         $portofolios -> save();
@@ -79,7 +79,7 @@ class PortofolioController extends Controller
     {
         $portofolios = portofolio::find($id);
         $portofolios -> titre = request('titre');
-        $portofolios -> description = request('description');
+        // $portofolios -> description = request('description');
         $portofolios -> description2 = request('description2');
         $portofolios -> img_porto = request('img_porto');
         $portofolios -> save();

@@ -5,7 +5,7 @@
         <div class="col-md-12">
           <h3 class="section-title">{{$titres[1]->titre}}</h3>
           <div class="section-title-divider"></div>
-          <p class="section-description">{{$titres[1]->description}}</p>
+          <!-- <p class="section-description">{{$titres[1]->description}}</p> -->
         </div>
       </div>
 
