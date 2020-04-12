@@ -61,7 +61,7 @@ class ServicesController extends Controller
      * @param  \App\services  $services
      * @return \Illuminate\Http\Response
      */
-    public function edit(services $services)
+    public function edit($id)
     {
         $services = services::find($id);
         return view('edit.services', compact('services'));
@@ -77,11 +77,11 @@ class ServicesController extends Controller
     public function update($id)
     {
         $services = services::find($id);
-        $services -> titre=request('titre');
+        $services -> titre = request('titre');
         $services -> description = request('description');
-        $services -> logo =request('logo');
-        $services ->save();
-        return redirect()->route('service');
+        $services -> logo = request('logo');
+        $services -> save();
+        return redirect() -> route('service');
     }
 
     /**

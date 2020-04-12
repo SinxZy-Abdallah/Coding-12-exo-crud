@@ -10,10 +10,10 @@
 </head>
 <body>
     <header id="header">
-        <div class="container">
+        <div class="container d-flex justify-content-center font-weight-bold">
       
           <div id="logo" class="pull-left">
-            <a href="#hero"><img src="img/" alt="" title="" /></img></a>
+            <a href="#hero"><img src="img" alt="" title=""></img></a>
             <!-- Uncomment below if you prefer to use a text image -->
             <!--<h1><a href="#hero">Header 1</a></h1>-->
           </div>     
@@ -25,21 +25,14 @@
           <li><a href="/">Home</a></li>
           <li><a href="/aboutedit">About Us</a></li>
           <li><a href="/servicedit">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#team">Team</a></li>
-          <li><a href="#contact">Contact Us</a></li>
-              {{-- <li class="menu-has-children"><a href="">Drop Down</a>
-                <ul>
-                  <li><a href="#">Drop Down 1</a></li> --}}
-          </ul>
+          <li><a href="/subscribedit">Subscribe</a></li>
+          <li><a href="/portofolioedit">Portfolio</a></li>
+          <li><a href="/testimonialedit">Testimonials</a></li>
+          <li><a href="/teamedit">Team</a></li>
+          <li><a href="/contactedit">Contact</a></li>
 </nav>
 </header>
 <div>
-{{-- <h1 class="text-center mt-5">Page Administration</h1> --}}
-</div>
-
-
 
 @yield('content')
 

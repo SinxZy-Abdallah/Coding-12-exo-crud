@@ -22,10 +22,10 @@ class ContactController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
+    // public function create()
+    // {
+    //     return view('create.contact');
+    // }
 
     /**
      * Store a newly created resource in storage.
@@ -33,9 +33,14 @@ class ContactController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        // $contacts = new contact();
+        // $contacts -> adress=request('adress');
+        // $contacts -> email =request('email');
+        // $contacts -> phone=request('phone');
+        // $contacts ->save();
+        // return redirect()->route('contact');
     }
 
     /**
@@ -46,7 +51,8 @@ class ContactController extends Controller
      */
     public function show(contact $contact)
     {
-        //
+        $contacts = contact::all();
+        return view('backOffice.contactedit', compact('contacts'));
     }
 
     /**
@@ -55,9 +61,10 @@ class ContactController extends Controller
      * @param  \App\contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function edit(contact $contact)
+    public function edit($id)
     {
-        //
+        $contacts = contact::find($id);
+        return view('edit.contact', compact('contacts'));
     }
 
     /**
@@ -67,9 +74,14 @@ class ContactController extends Controller
      * @param  \App\contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, contact $contact)
+    public function update($id)
     {
-        //
+        $contacts = contact::find($id);
+        $contacts -> adress=request('adress');
+        $contacts -> phone=request('phone');
+        $contacts -> email=request('email');
+        $contacts ->save();
+        return redirect()->route('contact');
     }
 
     /**
@@ -78,8 +90,9 @@ class ContactController extends Controller
      * @param  \App\contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function destroy(contact $contact)
+    public function destroy($id)
     {
-        //
+        // contact::find($id)->delete();
+        // return redirect()-> back();
     }
 }

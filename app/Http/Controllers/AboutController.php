@@ -36,7 +36,7 @@ class AboutController extends Controller
      */
     public function store()
     {
-        $abouts = new About();
+        $abouts = new about();
         $abouts -> titre2=request('titre2');
         $abouts -> description2=request('description2');
         $abouts -> img_about=request('img_about');

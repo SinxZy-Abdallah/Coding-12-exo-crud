@@ -3,7 +3,7 @@
 
 @include('templates.hero')
 @include('templates.about')
-@include('templates.services')
+@include('templates.service')
 @include('templates.subscribe')
 @include('templates.portofolio')
 @include('templates.testimonial')

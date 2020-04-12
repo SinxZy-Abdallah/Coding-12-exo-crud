@@ -1,6 +1,4 @@
-
-    
-<section id="about">
+<section class="py-3" id="about">
   <div class="container wow fadeInUp">
     <div class="row">
       <div class="col-md-12">
@@ -8,13 +6,11 @@
         <div class="section-title-divider"></div>
         <p class="section-description"> {{$titres[5]->description}} </p>
       </div>
+@foreach ($abouts as $aboutss)
     </div>
   </div>
-  <div class="container about-container wow fadeInUp">
- 
-
+  <div class="container py-3 about-container wow fadeInUp">
     <div class="row">
-@foreach ($abouts as $aboutss)
       <div class="col-lg-6 about-img">
         <img src="{{$aboutss->img_about}}" alt="">
       </div>
